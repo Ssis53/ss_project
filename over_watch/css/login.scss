@@ -1,0 +1,305 @@
+@charset "UTF-8";
+body, h1, h2, h3, h4, h5, h6, input, img, ul, li, ol, p, dl, dt, dd, figcaption, figure, header, main, aside, footer, section {
+  padding: 0;
+  margin: 0;
+}
+
+header, figure, figcaption, footer, main, aside, section {
+  display: block;
+}
+
+body {
+  background: url("../image/register/paper.jpg") no-repeat center top;
+  background-size: cover;
+  font-size: 15px;
+  color: rgba(255,255,255,.8);
+  font-family: "Blizzard","Arial","Helvetica","Segoe UI Symbol","Segoe MDL2 Assets","????????????","Microsoft YaHei","Hei SC","Segoe UI Symbol","Segoe MDL2 Assets",sans-serif;
+}
+
+ul, li {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.l {
+  float: left;
+}
+
+.r {
+  float: right;
+}
+
+.w {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*=============================login===================================*/
+
+.login {
+  .w {
+    overflow: hidden;
+    .log {
+      width: 100%;
+      margin: 45px auto 10px;
+      h1 {
+        width: 200px;
+        height: 105px;
+        margin: 0 auto;
+        img {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .input {
+      input {
+        margin: 7px 0;
+        padding: 0 10px;
+        font-size: 17px;
+        line-height: 20px;
+        height: 40px;
+        box-sizing: border-box;
+        border-radius: 2px;
+        background-color: rgb(250, 255, 189);
+        background-image: none;
+        color: rgb(0, 0, 0);
+        outline: none;
+        border: 0;
+        width: 100%;
+      }
+    }
+
+    .loginButton {
+      margin-top: 5px;
+      button {
+        margin: 0;
+        padding: 9px 30px;
+        font-size: 17px;
+        line-height: 20px;
+        height: 40px;
+        background-color: #0e86ca;
+        color: #fff;
+        border: 1px solid #10a1de;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.15) inset;
+        border-radius: 2px;
+        box-sizing: border-box;
+        width: 100%;
+        outline: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #00aeff;
+        color: #fff;
+        border-color: #00aeff;
+        box-shadow: 0 0 rgba(0,0,0,0);
+      }
+    }
+
+    .thirdparty-line {
+      margin: 12px auto;
+      position: relative;
+      font-size: 13px;
+      color: rgba(255,255,255,.3);
+      text-transform: uppercase;
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-align: center;
+      span::before {
+        content: "";
+        width: 180px;
+        content: "";
+        height: 1px;
+        background-color: #fff;
+        background-color: rgba(255,255,255,.1);
+        position: absolute;
+        top: 50%;
+        left: -25px;
+      }
+
+      span::after {
+        content: "";
+        width: 180px;
+        content: "";
+        height: 1px;
+        background-color: #fff;
+        background-color: rgba(255,255,255,.1);
+        position: absolute;
+        top: 50%;
+        right: -22px;
+      }
+    }
+
+    .registerButton {
+      margin-top: 5px;
+      button {
+        margin: 0;
+        padding: 9px 30px;
+        font-size: 17px;
+        line-height: 20px;
+        height: 40px;
+        background-color: #d60000;
+        border-color: transparent;
+        background-image: none;
+        box-shadow: none;
+        color: #fff;
+        border-radius: 2px;
+        box-sizing: border-box;
+        width: 100%;
+        outline: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #f70e0e;
+        color: #fff;
+        border-color: #f70e0e;
+        box-shadow: 0 0 rgba(0,0,0,0);
+      }
+    }
+  }
+}
+
+/*=============================footer=========================*/
+
+footer {
+  font-family: "Open Sans",Arial,Helvetica,"Segoe UI Symbol","Segoe MDL2 Assets","微软雅黑","Microsoft YaHei","Hei SC",sans-serif;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  color: #fff;
+  margin-top: 80px;
+  .w {
+    .footer-log{
+      text-align: center;
+      a{
+        display: inline-block;
+        h1 {
+          display: inline-block;
+          img {
+            width: 124px;
+            height: 66px;
+          }
+        }
+      }
+    }
+    .links {
+      ul {
+        margin: 30px auto 13px;
+        overflow: hidden;
+        text-align: center;
+        li {
+          display: inline-block;
+          span {
+            margin: 0 8px;
+            color: rgba(255,255,255,.7);
+            font-size: 14px;
+          }
+          a {
+            font-size: inherit;
+            color: rgba(255,255,255,.7);
+            text-decoration: none;
+            background: 0 0;
+            white-space: nowrap;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+    .NavbarFooter-copyright {
+      p {
+        text-align: center;
+        color: rgba(255,255,255,.3);
+        line-height: 1.4;
+        font-size: 13px;
+
+      }
+    }
+    .footer-law-links {
+      a {
+        font-size: inherit;
+        color: rgba(255,255,255,.7);
+        text-decoration: none;
+        background: 0 0;
+        white-space: nowrap;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+      span {
+        color: rgba(255,255,255,.7);
+      }
+    }
+    .footernum {
+      margin-top: 10px;
+      a {
+        font-size: inherit;
+        color: rgba(255,255,255,.3);
+        text-decoration: none;
+        background: 0 0;
+        white-space: nowrap;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+      span {
+        color: rgba(255,255,255,.3);
+      }
+    }
+    .footertel {
+      a {
+        font-size: inherit;
+        color: rgba(255,255,255,.3);
+        text-decoration: none;
+        background: 0 0;
+        white-space: nowrap;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+      span {
+        color: rgba(255,255,255,.3);
+      }
+    }
+    .last {
+      a {
+        font-size: inherit;
+        color: rgba(255,255,255,.7);
+        text-decoration: none;
+        background: 0 0;
+        white-space: nowrap;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+    }
+    .footer-img {
+      margin-top: 10px;
+      ul {
+        text-align: center;
+        li {
+          display: inline-block;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+
+}
