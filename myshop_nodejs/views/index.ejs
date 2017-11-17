@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/vender/bootstrap/dist/css/bootstrap.css">
+    <style media="screen">
+        #notice {
+            position: absolute;
+            border: 1px solid #ccc;
+            background: rgba(24,213,213,.52);
+            left: 50%;
+            margin-left: -25px;
+            top: 50%;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+  </head>
+  <body>
+      <%- include('header', {}) %>
+      <%- include('modal', {}) %>
+      <div id="notice">
+          <p>帐号：a</p>
+          <p>密码：a</p>
+      </div>
+    <script src="/vender/jquery/dist/jquery.js"></script>
+    <script src="/vender/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/javascripts/base.js"></script>
+  </body>
+</html>

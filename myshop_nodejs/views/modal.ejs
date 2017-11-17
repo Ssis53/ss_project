@@ -1,0 +1,61 @@
+    <!-- 登录模态框 -->
+        <div class="modal fade my-style" id="myLoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">用户登录</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="content">
+                            <div id="usernameL">
+                                <p>用户名<i class="hidei">请输入帐号</i><span class="hideSpan">帐号或密码错误</span></p>
+                                <input type="text" value="" placeholder="输入用户名">
+                            </div>
+                            <div id="userpassL">
+                                <p>密码<i class="hidei">请输入密码</i></p>
+                                <input type="text" value="" placeholder="输入密码">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="login">登录</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+    <!-- 注册模态框 -->
+        <div class="modal fade my-style" id="myRegisterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">用户注册</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="content">
+                            <div id="username">
+                                <p>用户名<i class="hidei">此字段不能为空</i><b class="hideb">该用户名已被注册</b></p>
+                                <input type="text" value="" placeholder="输入用户名">
+                            </div>
+                            <div id="userpass">
+                                <p>密码<span class="hideSpan">两次密码输入不一致</span><i class="hidei">此字段不能为空</i></p>
+                                <input type="text" value="" placeholder="输入密码">
+                            </div>
+                            <div id="confirmpass">
+                                <p>确认密码<span class="hideSpan">两次密码输入不一致</span><i class="hidei">此字段不能为空</i></p>
+                                <input type="text" value="" placeholder="再次输入密码">
+                            </div>
+                            <div id="email">
+                                <p>邮箱<i class="hidei">此字段不能为空</i></p>
+                                <input type="text" value="" placeholder="输入e-mail地址">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="register">确定注册</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>

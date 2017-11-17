@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/vender/bootstrap/dist/css/bootstrap.css">
+  </head>
+  <body>
+    <%- include('header', {}) %>
+    <%- include('modal', {}) %>
+
+    <!-- 登录小按钮 -->
+    <main>
+        <p id="addBtn">
+            <button type="button" class="btn btn-primary" data-target="#myManageModal" data-toggle="modal">添加</button>
+        </p>
+
+        <!-- 添加职位的模态框 -->
+        <div class="modal fade my-style" id="myManageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">职位信息</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="content">
+                            <form method="post" enctype="multipart/form-data" action="/fileUpload" id="frm">
+                                <div id="logo">
+                                    <p>公司logo<i class="hidei">此字段不能为空</i><b class="hideb">该用户名已被注册</b></p>
+                                    <input type="file" name="inputFile" id="upLogo">
+                                </div>
+                                <div id="positionName">
+                                    <p>职位名称<span class="hideSpan">两次密码输入不一致</span><i class="hidei">此字段不能为空</i></p>
+                                    <input type="text" value=""  name="positionName" placeholder="输入职位名">
+                                </div>
+                                <div id="company">
+                                    <p>公司名称<span class="hideSpan">两次密码输入不一致</span><i class="hidei">此字段不能为空</i></p>
+                                    <input type="text" value="" name="company" placeholder="输入公司名称">
+                                </div>
+                                <div id="exer">
+                                    <p>工作经验<i class="hidei">此字段不能为空</i></p>
+                                    <input type="text" value="" name="exer" placeholder="输入工作经验">
+                                </div>
+                                <div id="position">
+                                    <p>职位类型<i class="hidei">此字段不能为空</i></p>
+                                    <input type="text" value="" name="position" placeholder="输入职位名称">
+                                </div>
+                                <div id="where">
+                                    <p>工作地点<i class="hidei">此字段不能为空</i></p>
+                                    <input type="text" value="" name="where" placeholder="输入工作地点">
+                                </div>
+                                <div id="offer">
+                                    <p>岗位薪资<i class="hidei">此字段不能为空</i></p>
+                                    <input type="text" value="" name="offer" placeholder="输入岗位薪资">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="sub">提交</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!-- 修改职位的模态框 -->
+        <div class="modal fade my-style" id="myEditManageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">修改职位</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="content">
+                            <form method="post" enctype="multipart/form-data" action="/fileUpload/save" id="frmEdit">
+                                <div id="logoEdit">
+                                    <p>公司logo<i class="hidei">此字段不能为空</i><b class="hideb">该用户名已被注册</b></p>
+                                    <input type="file" name="inputFileEdit" id="upLogoEdit">
+                                </div>
+                                <div id="positionNameEdit">
+                                    <p>职位名称<span class="hideSpan">两次密码输入不一致</span><i class="hidei">此字段不能为空</i></p>
+                                    <input type="text" value=""  name="positionNameEdit" placeholder="输入职位名">
+                                </div>
+                                <div id="companyEdit">
+                                    <p>公司名称<span class="hideSpan">两次密码输入不一致</span><i class="hidei">此字段不能为空</i></p>
+                                    <input type="text" value="" name="companyEdit" placeholder="输入公司名称">
+                                </div>
+                                <div id="exerEdit">
+                                    <p>工作经验<i class="hidei">此字段不能为空</i></p>
+                                    <input type="text" value="" name="exerEdit" placeholder="输入工作经验">
+                                </div>
+                                <div id="positionEdit">
+                                    <p>职位类型<i class="hidei">此字段不能为空</i></p>
+                                    <input type="text" value="" name="positionEdit" placeholder="输入职位名称">
+                                </div>
+                                <div id="whereEdit">
+                                    <p>工作地点<i class="hidei">此字段不能为空</i></p>
+                                    <input type="text" value="" name="whereEdit" placeholder="输入工作地点">
+                                </div>
+                                <div id="offerEdit">
+                                    <p>岗位薪资<i class="hidei">此字段不能为空</i></p>
+                                    <input type="text" value="" name="offerEdit" placeholder="输入岗位薪资">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="subEdit">保存</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+
+
+        <!-- 主要的表格 -->
+        <section class="manage">
+            <table table-layout: fixed>
+                <tbody>
+                    <tr>
+                        <th>序号</th>
+                        <th>公司logo</th>
+                        <th>职位名称</th>
+                        <th>公司名称</th>
+                        <th>工作经验</th>
+                        <th>职位类型</th>
+                        <th>工作地点</th>
+                        <th>职位薪资</th>
+                        <th>操作</th>
+                    </tr>
+                    <% for(var i = 0; i < list.length; i++) {%>
+                        <tr>
+                            <td><%= i+1 %></td>
+                            <td><img src="<%= list[i].logoSrc %>" alt=""></td>
+                            <td><%= list[i].positionName %></td>
+                            <td><%= list[i].company %></td>
+                            <td><%= list[i].exer %></td>
+                            <td><%= list[i].position %></td>
+                            <td><%= list[i].where %></td>
+                            <td><%= list[i].offer %></td>
+                            <td>
+                                <a href="#" this-id="<%= list[i]._id %>" data-target="#myEditManageModal" data-toggle="modal" class="editBtn">修改</a>
+                                <a href="/manage/remove?id=<%= list[i]._id %>">删除</a>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <button id="prev">上一页</button>
+            <button id="next">下一页</button>
+        </section>
+        <input type="hidden" id="pageNoNow" value="<%= pageNoNow %>" name="pageNo">
+        <!-- 饼状图 -->
+        <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+        <div id="main" style="width: 600px;height:400px;"></div>
+    </main>
+    <script src="/vender/jquery/dist/jquery.js"></script>
+    <script src="/vender/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/vender/ECharts/echarts.common.min.js"></script>
+    <script src="/javascripts/base.js"></script>
+    <script src="/javascripts/manage.js"></script>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        var $where = $('.manage tr td:nth-of-type(7)');
+        var diqiu = 0;
+        var earth = 0;
+        var yurencun = 0;
+        var muye = 0;
+        var m78 = 0;
+        for(var i = 0; i < $where.length; i++) {
+            switch($where.eq(i).html()) {
+                case '地球':
+                diqiu++;
+                break;
+                case 'earth':
+                earth++;
+                break;
+                case '雨忍村':
+                yurencun++;
+                break;
+                case '木叶':
+                muye++;
+                break;
+                case 'M78星云':
+                m78++;
+                break;
+            }
+        }
+
+        // 指定图表的配置项和数据
+        option = {
+    title : {
+        text: '工作地点',
+        subtext: '纯属虚构',
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient : 'vertical',
+        x : 'left',
+        data:['地球','earth','雨忍村','木叶','M78星云']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {
+                show: true,
+                type: ['pie', 'funnel'],
+                option: {
+                    funnel: {
+                        x: '25%',
+                        width: '50%',
+                        funnelAlign: 'left',
+                        max: 1548
+                    }
+                }
+            },
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    series : [
+        {
+            name:'访问来源',
+            type:'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:diqiu, name:'地球'},
+                {value:earth, name:'earth'},
+                {value:yurencun, name:'雨忍村'},
+                {value:muye, name:'木叶'},
+                {value:m78, name:'M78星云'}
+            ]
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+  </body>
+</html>
